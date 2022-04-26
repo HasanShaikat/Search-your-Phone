@@ -1,3 +1,3 @@
 # phone-Bazar
 
-#This is a Smart Device find out site
+# ThisisaSmart Device find out site
