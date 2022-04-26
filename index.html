@@ -7,18 +7,31 @@
     <title>Phone Bazar</title>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
     <section class="container mx-auto text-center">
         <h1 class="text-4xl mt-8 pb-2 text-emerald-500 font-semibold">Search Your Favourite Phones</h1>
-        <input id="search-field" class="w-2/4 m-5 rounded-full border outline-0 px-4 py-1" type="text">
-        <button class="bg-gradient-to-r from-cyan-500 to-blue-400 text-white px-16 py-2 rounded-full" onclick="search()">Search</button>
+        <input  id="search-field" class="w-2/4 m-5 rounded-full border outline-0 px-4 py-1" type="text" placeholder="Search Your Smart Device">
+        <button class="bg-gradient-to-r from-cyan-500 to-blue-400 text-white px-12 py-2 rounded-full" onclick="search()"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 pr-2 inline" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>Search</button>
     </section>
+    
+    <!-- Clear Single Display Phone -->
+    <div id="clear-single"></div>
+    <!-- Display Not Found  -->
+    <div id="error-display"></div>
     <!-- Display Single Phone -->
     <div id="display-single-phone" class="container grid mx-auto md:w-2/4 text-center shadow-lg my-12 mb-16"></div>
 
     <div id="display-phones" class="mt-4 grid md:grid-cols-3 gap-4 container mx-auto text-center">
     </div>
+    
+
+    
+
+    
     <script src="js/app.js"></script>
 </body>
 </html>
