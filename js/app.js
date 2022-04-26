@@ -70,14 +70,21 @@ const displayPhoneDetails = phoneId =>{
         div.innerHTML = `
             <img src=${phoneId.image} class="mx-auto">
             <div class="py-4">
-                <p><span class="text-green-400 font-semibold">Name : </span> ${phoneId.name}</p>               
-                <p> <span class="text-green-400 font-semibold">Release : </span> ${phoneId.releaseDate ? phoneId.releaseDate: "Not Found &#9785;"}</p>                
+                <p ><span class="text-green-400 font-semibold">Name : </span> ${phoneId.name}</p>               
+                <p class="my-2"> <span class="text-green-400 font-semibold">Release : </span> ${phoneId.releaseDate ? phoneId.releaseDate: "No Release date &#9785;"}</p>                
                 <p><span class="text-green-400 font-semibold">Storage : </span>${phoneId.mainFeatures.storage}</p>
-                <p><span class="text-green-400 font-semibold">Display Size : </span>${phoneId.mainFeatures.displaySize}</p>
+                <p class="my-2"><span class="text-green-400 font-semibold">Display Size : </span>${phoneId.mainFeatures.displaySize}</p>
                 <p><span class="text-green-400 font-semibold">Memory : </span>${phoneId.mainFeatures.memory}</p>
-                <p><span class="text-green-400 font-semibold">Sensorsn : </span>${phoneId.mainFeatures.sensors}</p>
+                <p class="my-2"><span class="text-green-400 font-semibold">Sensorsn : </span>${phoneId.mainFeatures.sensors}</p>
                 <p><span class="text-green-400 font-semibold">Chipset : </span>${phoneId.mainFeatures.chipSet ? phoneId.mainFeatures.chipSet: 'No Found'}</p>
-                <p><span class="text-green-400 font-semibold">Others : </span>${phoneId.others.WLAN ? phoneId.others.WLAN: 'Nan'}</p>
+                <div class="shadow mt-2 pb-2">
+                    <p><span class="text-green-400 font-semibold">Others : </span>WLAN - ${phoneId.others.WLAN ? phoneId.others.WLAN: 'Not Found'}</p>
+                    <p>GPS - ${phoneId.others.GPS ? phoneId.others.GPS: 'Not Found'}</p>
+                    <p>NFC - ${phoneId.others.NFC ? phoneId.others.NFC: 'Not Found'}</p>
+                    <p>Radio - ${phoneId.others.Radio ? phoneId.others.Radio: 'Not Found'}</p>
+                    <p>Bluetooth - ${phoneId.others.Bluetooth ? phoneId.others.Bluetooth: 'Not Found'}</p>
+                    <p>USB - ${phoneId.others.USB ? phoneId.others.USB: 'Not Found'}</p>
+                </div>
                 
             </div>
            
