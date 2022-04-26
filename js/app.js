@@ -14,7 +14,7 @@ const search = () =>{
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     fetch(url)
     .then(res => res.json())
-    .then(data => displayPhone(data.data))
+    .then(data => displayPhone(data.data.slice(0,20)))
 }
 
 const displayPhone = phones => {
@@ -35,7 +35,7 @@ const displayPhone = phones => {
                 <div class="py-4">
                     <h2> <span class="text-green-400 font-semibold">Brands : </span> ${phone.brand}</h2>    
                     <h2><span class="text-green-400 font-semibold">Name : </span> ${phone.phone_name}</h2>
-                    <button class="bg-green-400 py-2 px-12 rounded mt-4 text-white" onclick="phoneDetail('${phone.slug}')">Detail</button>
+                    <button class="bg-green-400 py-2 px-12 rounded mt-4 text-white" onclick="phoneDetail('${phone.slug}')">Details</button>
                 </div>   
             `
         displayPhones.appendChild(div);
@@ -76,11 +76,12 @@ const displayPhoneDetails = phoneId =>{
                 <p><span class="text-green-400 font-semibold">Display Size : </span>${phoneId.mainFeatures.displaySize}</p>
                 <p><span class="text-green-400 font-semibold">Memory : </span>${phoneId.mainFeatures.memory}</p>
                 <p><span class="text-green-400 font-semibold">Sensorsn : </span>${phoneId.mainFeatures.sensors}</p>
-                <p><span class="text-green-400 font-semibold">Chipset : </span>${phoneId.mainFeatures.chipSet}</p>
+                <p><span class="text-green-400 font-semibold">Chipset : </span>${phoneId.mainFeatures.chipSet ? phoneId.mainFeatures.chipSet: 'No Found'}</p>
+                <p><span class="text-green-400 font-semibold">Others : </span>${phoneId.others.WLAN ? phoneId.others.WLAN: 'Nan'}</p>
+                
             </div>
            
         ` 
-        
         displaySinglePhone.appendChild(div)
     } 
 }
